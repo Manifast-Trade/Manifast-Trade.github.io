@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <title>Manifest Trade : Official Decentralized Exchange Platform</title>
+
+  <meta name="description" content="Manifest Trade is a high-performance decentralized trading platform built on Solana, featuring on-chain orderbooks, spot markets, liquidity strategies, vaults, and options trading tools.">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff4e9;
+      color: #2d190f;
+      line-height: 1.8;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: 92%;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #a83f05, #f18a32);
+      color: #ffffff;
+      padding: 24px 0;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 700;
+      margin-left: 18px;
+    }
+
+    .hero {
+      padding: 72px 0;
+      background: linear-gradient(180deg, #fff0df, #fffaf5);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #b94b09;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.1;
+      margin: 14px 0 22px;
+    }
+
+    h2 {
+      font-size: 34px;
+      line-height: 1.25;
+      margin: 0 0 18px;
+    }
+
+    h3 {
+      font-size: 22px;
+      line-height: 1.3;
+      margin: 0 0 10px;
+    }
+
+    p { margin: 0 0 18px; }
+
+    .lead {
+      font-size: 20px;
+      color: #674838;
+    }
+
+    .button {
+      display: inline-block;
+      background: #b94b09;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 800;
+      margin-top: 8px;
+    }
+
+    .hero-card,
+    .card {
+      background: #ffffff;
+      border: 1px solid #efc6a3;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 12px 30px rgba(120, 55, 10, 0.08);
+    }
+
+    .hero-card {
+      background: #2d190f;
+      color: #fff0e2;
+      border-color: #2d190f;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .logo-box img {
+      max-width: 100%;
+      max-height: 145px;
+      object-fit: contain;
+    }
+
+    .metric {
+      color: #ffb66d;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 12px 0;
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .section.alt {
+      background: #fffaf5;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #ffe0c5;
+      color: #9a3d05;
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    ul { padding-left: 22px; }
+    li { margin: 8px 0; }
+
+    .notice {
+      border-left: 5px solid #d96a1c;
+      background: #fff0df;
+      padding: 18px 22px;
+      border-radius: 8px;
+      margin-top: 22px;
+    }
+
+    footer {
+      background: #2d190f;
+      color: #ffe8d3;
+      padding: 32px 0;
+    }
+
+    .small {
+      color: #c99d82;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid,
+      .two-column,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 14px 0 0;
+      }
+
+      .hero { padding: 48px 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container navigation">
+      <div class="brand">Manifest Trade</div>
+
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#features">Features</a>
+        <a href="#orderbook">Orderbook</a>
+        <a href="#vaults">Vaults</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Solana DeFi Infrastructure</div>
+
+          <h1>Manifest Trade: Advanced Decentralized Trading Platform on Solana</h1>
+
+          <p class="lead">
+            Manifest Trade is a high-performance decentralized trading platform
+            built on Solana. It combines on-chain orderbooks, spot markets,
+            liquidity tools, automated strategies, and options-related trading
+            functionality in one Web3-focused environment.
+          </p>
+
+        </div>
+
+        <div class="hero-card">
+          <div class="logo-box">
+            <img src="Manifesttrade.png" alt="Manifest Trade logo">
+          </div>
+
+          <p style="margin-top: 20px; margin-bottom: 6px;">Trading infrastructure</p>
+
+          <div class="metric">Orderbook · Liquidity · DeFi</div>
+
+          <p>
+            Connect a compatible wallet, explore available markets, manage
+            orders, and interact with decentralized trading tools.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="container">
+        <h2>What Is Manifest Trade?</h2>
+
+        <p>
+          Manifest Trade is a decentralized trading platform designed for users
+          who want to interact with digital asset markets through blockchain-based
+          infrastructure. Instead of depending entirely on a traditional
+          centralized exchange, the platform is built around on-chain market
+          activity and wallet-based access.
+        </p>
+
+        <p>
+          The platform focuses on bringing an orderbook trading experience to the
+          Solana ecosystem. This model allows traders to view buy and sell orders,
+          consider available liquidity, and submit trading instructions through a
+          decentralized interface.
+        </p>
+
+        <p>
+          Manifest Trade also explores liquidity strategies, vault-based products,
+          and options functionality. These tools are intended to support different
+          types of market participants, including active traders, liquidity
+          providers, and users interested in structured digital asset products.
+        </p>
+
+        <div class="two-column">
+          <div class="card">
+            <span class="tag">Solana-based</span>
+            <h3>Built for fast blockchain activity</h3>
+            <p>
+              Solana provides the underlying environment for transactions,
+              market operations, wallet connections, and other platform activity.
+              Its performance-oriented design is suitable for applications that
+              require frequent blockchain interactions.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="tag">Non-custodial access</span>
+            <h3>Users connect their own wallets</h3>
+            <p>
+              Wallet-based access allows users to interact with supported markets
+              while maintaining control over their private keys and assets. Users
+              remain responsible for wallet security and transaction approval.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="features">
+      <div class="container">
+        <h2>Main Features of Manifest Trade</h2>
+
+        <div class="grid">
+          <div class="card">
+            <span class="tag">01</span>
+            <h3>On-chain orderbooks</h3>
+            <p>
+              Manifest Trade uses an orderbook-oriented model where traders can
+              interact with visible buy and sell orders. This format is familiar
+              to users who prefer limit orders and market-depth information.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="tag">02</span>
+            <h3>Spot trading markets</h3>
+            <p>
+              Spot markets allow users to exchange supported digital assets.
+              Traders can review prices, quantities, order types, spreads, and
+              available liquidity before submitting a transaction.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="tag">03</span>
+            <h3>Wallet integration</h3>
+            <p>
+              Users can connect a compatible Solana wallet to access the platform.
+              Wallet connections are used to approve transactions and interact
+              with supported trading functions.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="tag">04</span>
+            <h3>Liquidity tools</h3>
+            <p>
+              Liquidity-focused tools are designed to support market depth and
+              trading activity. Their results can depend on volume, spreads,
+              market conditions, and the strategy being used.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="tag">05</span>
+            <h3>Automated strategies</h3>
+            <p>
+              Automated market-making strategies can place and manage orders based
+              on predefined rules. These systems may help organize liquidity
+              operations through predefined rules and automated order management.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="tag">06</span>
+            <h3>Options functionality</h3>
+            <p>
+              Options-related workflows may include calls, puts, strike prices,
+              collateral, expiration periods, and settlement conditions. Users
+              should understand the terms of each product before participating.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="orderbook">
+      <div class="container">
+        <h2>How the Manifest Trade Orderbook Works</h2>
+
+        <p>
+          An orderbook displays open buy and sell instructions for a market.
+          Buy orders are commonly called bids, while sell orders are called asks.
+          The difference between the best available bid and ask is known as the
+          spread.
+        </p>
+
+        <p>
+          Traders may use market orders when they want execution near the current
+          available price, or limit orders when they want to specify the price at
+          which they are willing to trade. The actual execution price can depend
+          on liquidity, order size, market movement, and matching conditions.
+        </p>
+
+        <ul>
+          <li>Review the available bids and asks.</li>
+          <li>Choose a supported market and trading pair.</li>
+          <li>Select an order type and enter the desired amount.</li>
+          <li>Review estimated costs and transaction details.</li>
+          <li>Approve the transaction through the connected wallet.</li>
+        </ul>
+
+        <div class="notice">
+          <strong>Important:</strong>
+          On-chain transactions may involve network fees, price impact, slippage,
+          and execution delays. Always review the final transaction details before
+          signing.
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2>Spot Markets and Token Trading</h2>
+
+        <p>
+          Spot trading involves exchanging one digital asset for another without
+          creating a future-dated derivative position. On Manifest Trade, users
+          may explore supported spot markets and use the available orderbook to
+          manage their trading instructions.
+        </p>
+
+        <p>
+          The quality of a spot market can depend on trading volume, orderbook
+          depth, the number of active participants, and the spread between buyers
+          and sellers. A market with limited liquidity may experience larger price
+          movements when larger orders are submitted.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="section" id="vaults">
+      <div class="container">
+        <h2>Destiny Vaults and Liquidity Strategies</h2>
+
+        <p>
+          Manifest Trade’s vault-oriented products are designed to organize
+          liquidity strategies around orderbook markets. Instead of requiring every
+          participant to manage individual orders manually, a vault strategy can
+          use predefined rules to place, adjust, or manage orders.
+        </p>
+
+        <div class="two-column">
+          <div class="card">
+            <h3>Potential strategy functions</h3>
+            <ul>
+              <li>Providing liquidity to supported markets.</li>
+              <li>Placing orders around reference prices.</li>
+              <li>Managing inventory across trading pairs.</li>
+              <li>Adjusting activity based on market conditions.</li>
+              <li>Representing participation through liquidity tokens.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>What users should review</h3>
+            <ul>
+              <li>Vault strategy and supported markets.</li>
+              <li>Deposit and withdrawal conditions.</li>
+              <li>Fees and performance calculations.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2>Options Trading Concepts</h2>
+
+        <p>
+          Options are financial instruments that provide rights connected to an
+          underlying asset. A call option generally relates to the right to buy at
+          a specified strike price, while a put option generally relates to the
+          right to sell at a specified strike price. Options may also include an
+          expiration date and collateral requirements.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2>Benefits of Manifest Trade</h2>
+
+        <p>
+          Manifest Trade brings several blockchain trading concepts together in a
+          single Solana-focused environment. Its orderbook model may appeal to
+          users who prefer visible market depth and more familiar trading controls.
+        </p>
+
+        <p>
+          The platform’s liquidity strategies and vaults may be useful for users
+          interested in market-making activity, while options-related functionality
+          provides additional tools for participants who understand derivative
+          products.
+        </p>
+
+        <p>
+          The main benefits include on-chain market interaction, wallet-based
+          access, Solana performance, orderbook trading, liquidity infrastructure,
+          and a growing set of decentralized financial tools.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Conclusion</h2>
+
+        <p>
+          Manifest Trade is a Solana-based decentralized trading platform focused
+          on on-chain orderbooks, spot markets, liquidity strategies, vaults, and
+          options-related functionality. It is designed to connect users with
+          blockchain-based markets through a wallet-driven interface.
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>Manifest Trade</strong>
+      <p class="small">
+        Decentralized trading infrastructure for on-chain markets.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
